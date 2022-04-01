@@ -55,6 +55,13 @@ class BarRenderer: UIView {
         }
     }
     
+    func setupBarWithAnimation(value:CGFloat, duration:Double = 0.4,delay:Double = 0.0,dampingEffect : Double = 0.4,dampingVelocity:Double=0.2,color:UIColor, labelColor: UIColor) {
+        setupBar(value, color: color, labelColor: labelColor)
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: dampingEffect, initialSpringVelocity: dampingVelocity, options: .curveLinear, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
    private var color : UIColor = .clear {
         didSet {
             barView.backgroundColor = color

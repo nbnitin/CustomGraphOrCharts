@@ -28,6 +28,7 @@ class BarGraph: UIView {
     var barRendererViews : [BarRenderer] = [BarRenderer]()
     let colors = ["F8C346","EF6C00","EEEEEE"]
     let icons = ["Me","Topper","Others"]
+    var makeBarAnimate : Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,7 +63,11 @@ class BarGraph: UIView {
                     color = UIColor(hexString: colors.last ?? "")
                     labelColor = .black
                 }
-                barRendererView.setupBar(values[i], color: color, labelColor: labelColor)
+                if makeBarAnimate {
+                    barRendererView.setupBarWithAnimation(value: values[i], color: color, labelColor: labelColor)
+                } else {
+                    barRendererView.setupBar(values[i], color: color, labelColor: labelColor)
+                }
                 barRendererViews.append(barRendererView)
                 var titleAndIconName = ""
                 if i >= icons.count {
@@ -91,6 +96,8 @@ class BarGraph: UIView {
             
         }
     }
+    
+    
     
     @IBInspectable
     var drawHorizontalSeperatorEnabled : Bool = true {

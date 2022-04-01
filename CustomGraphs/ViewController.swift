@@ -19,11 +19,12 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        barGraphView.values = values
         barGraphView.drawHorizontalSeperatorEnabled = true
         barGraphView.drawHorizontalSeperatorBehind = false
         barGraphView.layer.borderWidth = 0.5
         barGraphView.layer.borderColor = UIColor.black.cgColor
+        barGraphView.makeBarAnimate = true
+        barGraphView.values = values
     }
 
 }
