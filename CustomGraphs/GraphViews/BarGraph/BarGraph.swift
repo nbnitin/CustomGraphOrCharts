@@ -6,10 +6,15 @@
 //
 
 import UIKit
+let CHART_STACK_VIEW_SPACING : CGFloat = 58
+let BAR_WIDTH : CGFloat = 34
+let MARGIN : CGFloat = 31.5
 
 @IBDesignable
 class BarGraph: UIView {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackChartViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackChartView: UIStackView!
     @IBOutlet var contentView : UIView!
     @IBOutlet weak var graphContainerView: UIView!
@@ -47,7 +52,7 @@ class BarGraph: UIView {
         didSet {
             for i in 0 ..< values.count {
                 let barRendererView = BarRenderer()
-                barRendererView.widthAnchor.constraint(equalToConstant: 34).isActive = true
+                barRendererView.widthAnchor.constraint(equalToConstant: BAR_WIDTH).isActive = true
                 barRendererView.heightAnchor.constraint(equalToConstant: stackChartView.frame.height).isActive = true
                 barRendererView.backgroundColor = .clear
                 stackChartView.addArrangedSubview(barRendererView)
@@ -59,9 +64,30 @@ class BarGraph: UIView {
                 }
                 barRendererView.setupBar(values[i], color: color, labelColor: labelColor)
                 barRendererViews.append(barRendererView)
-                setupXAxis(barView: barRendererView,iconName:icons[i],title:icons[i])
-
+                var titleAndIconName = ""
+                if i >= icons.count {
+                   titleAndIconName = icons.last ?? ""
+                } else {
+                    titleAndIconName = icons[i]
+                }
+                setupXAxis(barView: barRendererView,iconName:titleAndIconName,title:titleAndIconName)
+                
+                
+                
+                
             }
+            
+            if round(stackChartView.frame.width / (BAR_WIDTH + CHART_STACK_VIEW_SPACING)) < CGFloat(values.count) {
+                scrollView.isScrollEnabled = true
+                scrollView.flashScrollIndicators()
+            } else {
+                scrollView.isScrollEnabled = false
+            }
+            
+            stackChartViewWidthConstraint.constant =  CGFloat(CGFloat(Int(CHART_STACK_VIEW_SPACING) * values.count) + (BAR_WIDTH * CGFloat(values.count)) - MARGIN)
+            
+            
+            
             
         }
     }

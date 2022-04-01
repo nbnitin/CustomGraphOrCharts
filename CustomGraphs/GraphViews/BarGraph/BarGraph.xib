@@ -14,7 +14,9 @@
                 <outlet property="contentView" destination="DRp-hC-T0t" id="Wf3-Mx-1Vc"/>
                 <outlet property="graphContainerView" destination="0u4-I7-qSj" id="kd2-BX-qX4"/>
                 <outlet property="lblYAxisTitle" destination="4QN-zS-puq" id="Rku-8i-9ct"/>
+                <outlet property="scrollView" destination="hLi-Ta-NEx" id="VqD-hi-i1Z"/>
                 <outlet property="stackChartView" destination="z0Q-Tz-cZl" id="FRY-Bl-XWO"/>
+                <outlet property="stackChartViewWidthConstraint" destination="HAV-KP-Uig" id="Ys1-mu-phj"/>
                 <outlet property="xAxisContainerView" destination="2XG-4X-7Qe" id="YZp-tj-awX"/>
                 <outlet property="yAxisSeperator" destination="RSr-me-LUI" id="wYY-7i-dQ1"/>
                 <outletCollection property="horizontalSeperators" destination="Dpp-ou-mmC" collectionClass="NSMutableArray" id="v8A-Fs-e68"/>
@@ -22,9 +24,9 @@
                 <outletCollection property="horizontalSeperators" destination="uq5-jI-LMP" collectionClass="NSMutableArray" id="YwD-Pt-zjK"/>
                 <outletCollection property="horizontalSeperators" destination="jvi-Tn-7zN" collectionClass="NSMutableArray" id="5G7-IE-zmh"/>
                 <outletCollection property="horizontalSeperators" destination="awZ-ll-Nv9" collectionClass="NSMutableArray" id="uZF-yJ-x33"/>
-                <outletCollection property="barView" destination="Abc-Mi-3PW" collectionClass="NSMutableArray" id="rv6-g3-Ir7"/>
                 <outletCollection property="barView" destination="qzr-PX-i7J" collectionClass="NSMutableArray" id="8Zy-p3-sMp"/>
                 <outletCollection property="barView" destination="RHZ-Xo-QFP" collectionClass="NSMutableArray" id="Bej-Cx-JXv"/>
+                <outletCollection property="barView" destination="Abc-Mi-3PW" collectionClass="NSMutableArray" id="rv6-g3-Ir7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -137,47 +139,65 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-hx-cdb" userLabel="Chart View">
                             <rect key="frame" x="67.5" y="10" width="272" height="737"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="z0Q-Tz-cZl">
-                                    <rect key="frame" x="0.0" y="0.0" width="272" height="737"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-Ta-NEx">
+                                    <rect key="frame" x="0.0" y="0.0" width="282" height="737"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-Mi-3PW" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="34" height="876"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="z0Q-Tz-cZl">
+                                            <rect key="frame" x="0.0" y="0.0" width="272" height="737"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-Mi-3PW" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="737"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="0oq-kQ-iZD"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-PX-i7J" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
+                                                    <rect key="frame" x="483" y="0.0" width="34" height="737"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="UE6-YJ-Xqc"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHZ-Xo-QFP" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
+                                                    <rect key="frame" x="966" y="0.0" width="34" height="737"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="mLG-jO-NfS"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="0oq-kQ-iZD"/>
+                                                <constraint firstAttribute="width" constant="272" id="HAV-KP-Uig"/>
                                             </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-PX-i7J" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
-                                            <rect key="frame" x="119" y="0.0" width="34" height="876"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="UE6-YJ-Xqc"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHZ-Xo-QFP" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
-                                            <rect key="frame" x="238" y="0.0" width="34" height="876"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="mLG-jO-NfS"/>
-                                            </constraints>
-                                        </view>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Abc-Mi-3PW"/>
+                                                    <exclude reference="qzr-PX-i7J"/>
+                                                    <exclude reference="RHZ-Xo-QFP"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="Abc-Mi-3PW"/>
-                                            <exclude reference="qzr-PX-i7J"/>
-                                            <exclude reference="RHZ-Xo-QFP"/>
-                                        </mask>
-                                    </variation>
-                                </stackView>
+                                    <constraints>
+                                        <constraint firstItem="z0Q-Tz-cZl" firstAttribute="leading" secondItem="VAe-pT-4fM" secondAttribute="leading" id="Ee9-PL-SD2"/>
+                                        <constraint firstItem="z0Q-Tz-cZl" firstAttribute="bottom" secondItem="VAe-pT-4fM" secondAttribute="bottom" id="FJV-Dd-8cV"/>
+                                        <constraint firstItem="z0Q-Tz-cZl" firstAttribute="height" secondItem="kEZ-DB-osq" secondAttribute="height" id="H4f-ix-niJ"/>
+                                        <constraint firstItem="z0Q-Tz-cZl" firstAttribute="trailing" secondItem="VAe-pT-4fM" secondAttribute="trailing" id="ms9-aj-3Gn"/>
+                                        <constraint firstItem="z0Q-Tz-cZl" firstAttribute="top" secondItem="VAe-pT-4fM" secondAttribute="top" id="tUG-6S-uit"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="contentLayoutGuide" id="VAe-pT-4fM"/>
+                                    <viewLayoutGuide key="frameLayoutGuide" id="kEZ-DB-osq"/>
+                                </scrollView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="z0Q-Tz-cZl" secondAttribute="bottom" id="0Wf-Ez-2Yu"/>
-                                <constraint firstItem="z0Q-Tz-cZl" firstAttribute="leading" secondItem="ndR-hx-cdb" secondAttribute="leading" id="PTe-DL-oeJ"/>
-                                <constraint firstAttribute="trailing" secondItem="z0Q-Tz-cZl" secondAttribute="trailing" id="ySO-98-OCd"/>
-                                <constraint firstItem="z0Q-Tz-cZl" firstAttribute="top" secondItem="ndR-hx-cdb" secondAttribute="top" id="yzK-gp-G71"/>
+                                <constraint firstAttribute="trailing" secondItem="hLi-Ta-NEx" secondAttribute="trailing" constant="-10" id="NS8-UB-x5I"/>
+                                <constraint firstItem="hLi-Ta-NEx" firstAttribute="top" secondItem="ndR-hx-cdb" secondAttribute="top" id="UpA-D4-ztA"/>
+                                <constraint firstItem="hLi-Ta-NEx" firstAttribute="leading" secondItem="ndR-hx-cdb" secondAttribute="leading" id="aOd-mL-dbj"/>
+                                <constraint firstAttribute="bottom" secondItem="hLi-Ta-NEx" secondAttribute="bottom" id="m1g-OQ-Ky1"/>
                             </constraints>
                         </view>
                     </subviews>
