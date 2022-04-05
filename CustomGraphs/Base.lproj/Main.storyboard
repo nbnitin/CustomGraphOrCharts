@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,6 +40,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="35" y="80"/>
+        </scene>
+        <!--Bar Graph Using Collection View-->
+        <scene sceneID="r35-6L-xK2">
+            <objects>
+                <viewController id="Sp6-5x-AYb" customClass="BarGraphUsingCollectionView" customModule="CustomGraphs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tar-b2-2C5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KtJ-zY-ftC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="lSS-37-WRN"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aLc-VE-0jq">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="QOv-ea-dWH" customClass="BarCollectionViewCell" customModule="CustomGraphs" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="36" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rHa-8H-qDE">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-nN-jzx">
+                                                    <rect key="frame" x="0.0" y="25" width="128" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="e5W-nN-jzx" secondAttribute="trailing" id="Drn-48-Pw2"/>
+                                                <constraint firstAttribute="bottom" secondItem="e5W-nN-jzx" secondAttribute="bottom" id="Ufa-x4-7LB"/>
+                                                <constraint firstItem="e5W-nN-jzx" firstAttribute="leading" secondItem="rHa-8H-qDE" secondAttribute="leading" id="fQv-ho-cd6"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="barView" destination="e5W-nN-jzx" id="nE5-cv-9zU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sp6-5x-AYb" id="Toh-hf-64g"/>
+                                    <outlet property="delegate" destination="Sp6-5x-AYb" id="1rZ-IT-p66"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7ex-es-7kQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7ex-es-7kQ" firstAttribute="trailing" secondItem="KtJ-zY-ftC" secondAttribute="trailing" id="2u4-PV-Ck2"/>
+                            <constraint firstItem="KtJ-zY-ftC" firstAttribute="leading" secondItem="7ex-es-7kQ" secondAttribute="leading" id="AR1-Cw-8av"/>
+                            <constraint firstItem="KtJ-zY-ftC" firstAttribute="top" secondItem="7ex-es-7kQ" secondAttribute="top" id="oHy-VN-sgG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="KtJ-zY-ftC" id="X8D-ir-BNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xku-H9-seo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="80"/>
         </scene>
     </scenes>
     <resources>

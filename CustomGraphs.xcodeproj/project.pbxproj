@@ -12,6 +12,8 @@
 		452DA0FF27F6C3B9002AACE3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452DA0FE27F6C3B9002AACE3 /* Extensions.swift */; };
 		45887D4627F6E7A2001BBFD8 /* XAxisRenderWithImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45887D4527F6E7A2001BBFD8 /* XAxisRenderWithImage.xib */; };
 		45887D4827F6E7EF001BBFD8 /* XAxisRenderWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45887D4727F6E7EF001BBFD8 /* XAxisRenderWithImage.swift */; };
+		45A0E25727FC24560028EA69 /* BarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0E25627FC24560028EA69 /* BarCollectionViewCell.swift */; };
+		45A0E25927FC24AC0028EA69 /* BarGraphUsingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0E25827FC24AC0028EA69 /* BarGraphUsingCollectionView.swift */; };
 		45DA0E1E27F6B3D800E98B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0E1D27F6B3D800E98B62 /* AppDelegate.swift */; };
 		45DA0E2027F6B3D800E98B62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0E1F27F6B3D800E98B62 /* SceneDelegate.swift */; };
 		45DA0E2227F6B3D800E98B62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DA0E2127F6B3D800E98B62 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		452DA0FE27F6C3B9002AACE3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		45887D4527F6E7A2001BBFD8 /* XAxisRenderWithImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XAxisRenderWithImage.xib; sourceTree = "<group>"; };
 		45887D4727F6E7EF001BBFD8 /* XAxisRenderWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisRenderWithImage.swift; sourceTree = "<group>"; };
+		45A0E25627FC24560028EA69 /* BarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCollectionViewCell.swift; sourceTree = "<group>"; };
+		45A0E25827FC24AC0028EA69 /* BarGraphUsingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphUsingCollectionView.swift; sourceTree = "<group>"; };
 		45DA0E1A27F6B3D800E98B62 /* CustomGraphs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomGraphs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DA0E1D27F6B3D800E98B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DA0E1F27F6B3D800E98B62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 				45DA0E1D27F6B3D800E98B62 /* AppDelegate.swift */,
 				45DA0E1F27F6B3D800E98B62 /* SceneDelegate.swift */,
 				45DA0E2127F6B3D800E98B62 /* ViewController.swift */,
+				45A0E25827FC24AC0028EA69 /* BarGraphUsingCollectionView.swift */,
 				45DA0E2327F6B3D800E98B62 /* Main.storyboard */,
 				45DA0E2627F6B3DB00E98B62 /* Assets.xcassets */,
 				45DA0E2827F6B3DB00E98B62 /* LaunchScreen.storyboard */,
@@ -100,6 +105,7 @@
 				452DA0FC27F6C002002AACE3 /* BarRenderer.swift */,
 				45887D4527F6E7A2001BBFD8 /* XAxisRenderWithImage.xib */,
 				45887D4727F6E7EF001BBFD8 /* XAxisRenderWithImage.swift */,
+				45A0E25627FC24560028EA69 /* BarCollectionViewCell.swift */,
 			);
 			path = BarGraph;
 			sourceTree = "<group>";
@@ -180,9 +186,11 @@
 			files = (
 				45DA0E3227F6B41500E98B62 /* BarGraph.swift in Sources */,
 				452DA0FF27F6C3B9002AACE3 /* Extensions.swift in Sources */,
+				45A0E25727FC24560028EA69 /* BarCollectionViewCell.swift in Sources */,
 				45DA0E2227F6B3D800E98B62 /* ViewController.swift in Sources */,
 				45DA0E1E27F6B3D800E98B62 /* AppDelegate.swift in Sources */,
 				45DA0E2027F6B3D800E98B62 /* SceneDelegate.swift in Sources */,
+				45A0E25927FC24AC0028EA69 /* BarGraphUsingCollectionView.swift in Sources */,
 				452DA0FD27F6C002002AACE3 /* BarRenderer.swift in Sources */,
 				45887D4827F6E7EF001BBFD8 /* XAxisRenderWithImage.swift in Sources */,
 			);
