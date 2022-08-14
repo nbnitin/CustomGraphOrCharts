@@ -18,23 +18,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ely-Bj-SbE" customClass="BarGraph" customModule="CustomGraphs" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="250"/>
+                                <rect key="frame" x="10" y="44" width="394" height="250"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="fLG-BL-lHV"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scg-4S-Ibk">
+                                <rect key="frame" x="20" y="334" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt8-6R-8w6">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Value 1"/>
+                                        <connections>
+                                            <action selector="btnValuesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BAd-cn-TJa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7r-C9-XpN">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Value 2"/>
+                                        <connections>
+                                            <action selector="btnValuesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4R9-q3-Z7P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWF-Uq-ehZ">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Value 3"/>
+                                        <connections>
+                                            <action selector="btnValuesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZO7-hQ-RUR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DBO-xq-Hhq"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ely-Bj-SbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8cp-fO-el0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ely-Bj-SbE" secondAttribute="trailing" constant="20" id="Hsi-kg-Tn6"/>
+                            <constraint firstItem="Ely-Bj-SbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8cp-fO-el0"/>
+                            <constraint firstItem="scg-4S-Ibk" firstAttribute="top" secondItem="Ely-Bj-SbE" secondAttribute="bottom" constant="40" id="FaY-MY-eHg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ely-Bj-SbE" secondAttribute="trailing" constant="10" id="Hsi-kg-Tn6"/>
                             <constraint firstItem="Ely-Bj-SbE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Isg-l6-D15"/>
+                            <constraint firstItem="scg-4S-Ibk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SY8-4d-9XU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="scg-4S-Ibk" secondAttribute="trailing" constant="20" id="p8P-02-nZU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="barGraphView" destination="Ely-Bj-SbE" id="5yp-02-Gde"/>
+                        <outletCollection property="btnValues" destination="Tt8-6R-8w6" collectionClass="NSMutableArray" id="4EV-SH-ITW"/>
+                        <outletCollection property="btnValues" destination="o7r-C9-XpN" collectionClass="NSMutableArray" id="kp9-tR-MDr"/>
+                        <outletCollection property="btnValues" destination="xWF-Uq-ehZ" collectionClass="NSMutableArray" id="f5R-0F-OXo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

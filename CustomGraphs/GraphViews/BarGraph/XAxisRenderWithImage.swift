@@ -31,7 +31,7 @@ class XAxisRenderWithImage: UIView {
         contentView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
     }
     
-    func setupView(img:String,title:String) {
+    func setupView(img:String,title:String,index:Int) {
         imgIcon.image = UIImage(named: img)
         lblTitle.text = title
     }

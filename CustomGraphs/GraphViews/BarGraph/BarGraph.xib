@@ -13,12 +13,12 @@
                 <outlet property="chartView" destination="ndR-hx-cdb" id="W3S-or-zyj"/>
                 <outlet property="contentView" destination="DRp-hC-T0t" id="Wf3-Mx-1Vc"/>
                 <outlet property="graphContainerView" destination="0u4-I7-qSj" id="kd2-BX-qX4"/>
-                <outlet property="lblYAxisTitle" destination="4QN-zS-puq" id="Rku-8i-9ct"/>
                 <outlet property="scrollView" destination="hLi-Ta-NEx" id="VqD-hi-i1Z"/>
                 <outlet property="stackChartView" destination="z0Q-Tz-cZl" id="FRY-Bl-XWO"/>
-                <outlet property="stackChartViewWidthConstraint" destination="HAV-KP-Uig" id="Ys1-mu-phj"/>
+                <outlet property="stackChartViewWidthConstraint" destination="GPz-AV-7tU" id="h2k-02-rBi"/>
                 <outlet property="xAxisContainerView" destination="2XG-4X-7Qe" id="YZp-tj-awX"/>
                 <outlet property="yAxisSeperator" destination="RSr-me-LUI" id="wYY-7i-dQ1"/>
+                <outlet property="yAxisStackView" destination="hbB-hF-aaM" id="Ra6-dy-JIw"/>
                 <outletCollection property="horizontalSeperators" destination="Dpp-ou-mmC" collectionClass="NSMutableArray" id="v8A-Fs-e68"/>
                 <outletCollection property="horizontalSeperators" destination="W1X-WV-3K8" collectionClass="NSMutableArray" id="MkP-Sf-ajK"/>
                 <outletCollection property="horizontalSeperators" destination="uq5-jI-LMP" collectionClass="NSMutableArray" id="YwD-Pt-zjK"/>
@@ -35,42 +35,42 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpp-ou-mmC" userLabel="horizontalSeperators">
-                    <rect key="frame" x="65" y="642.5" width="339" height="1"/>
+                    <rect key="frame" x="44" y="642.5" width="360" height="1"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="AgH-0h-R9Y"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1X-WV-3K8" userLabel="horizontalSeperators">
-                    <rect key="frame" x="65" y="495.5" width="339" height="1"/>
+                    <rect key="frame" x="44" y="495.5" width="360" height="1"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="XJy-VH-p6X"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uq5-jI-LMP" userLabel="horizontalSeperators">
-                    <rect key="frame" x="65" y="348.5" width="339" height="1"/>
+                    <rect key="frame" x="44" y="348.5" width="360" height="1"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="rIv-jO-qCD"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvi-Tn-7zN" userLabel="horizontalSeperators">
-                    <rect key="frame" x="65" y="201.5" width="339" height="1"/>
+                    <rect key="frame" x="44" y="201.5" width="360" height="1"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="V2t-u3-Gcg"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awZ-ll-Nv9" userLabel="horizontalSeperators">
-                    <rect key="frame" x="65" y="54.5" width="339" height="1"/>
+                    <rect key="frame" x="44" y="54.5" width="360" height="1"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="6fB-dg-egf"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u4-I7-qSj" userLabel="GraphContainer">
-                    <rect key="frame" x="31" y="44" width="373" height="757"/>
+                    <rect key="frame" x="10" y="44" width="394" height="757"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPw-Pz-AGj">
                             <rect key="frame" x="0.0" y="0.0" width="34" height="757"/>
@@ -137,13 +137,13 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-hx-cdb" userLabel="Chart View">
-                            <rect key="frame" x="67.5" y="10" width="272" height="737"/>
+                            <rect key="frame" x="67.5" y="10" width="293" height="737"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-Ta-NEx">
-                                    <rect key="frame" x="0.0" y="0.0" width="282" height="737"/>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-Ta-NEx">
+                                    <rect key="frame" x="0.0" y="0.0" width="303" height="737"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="z0Q-Tz-cZl">
-                                            <rect key="frame" x="0.0" y="0.0" width="272" height="737"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="737"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-Mi-3PW" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="34" height="737"/>
@@ -153,14 +153,14 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-PX-i7J" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
-                                                    <rect key="frame" x="483" y="0.0" width="34" height="737"/>
+                                                    <rect key="frame" x="92" y="0.0" width="34" height="737"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="UE6-YJ-Xqc"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHZ-Xo-QFP" customClass="BarRenderer" customModule="CustomGraphs" customModuleProvider="target">
-                                                    <rect key="frame" x="966" y="0.0" width="34" height="737"/>
+                                                    <rect key="frame" x="184" y="0.0" width="34" height="737"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="mLG-jO-NfS"/>
@@ -169,13 +169,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="272" id="HAV-KP-Uig"/>
+                                                <constraint firstAttribute="width" constant="218" id="GPz-AV-7tU"/>
                                             </constraints>
                                             <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="Abc-Mi-3PW"/>
-                                                    <exclude reference="qzr-PX-i7J"/>
-                                                    <exclude reference="RHZ-Xo-QFP"/>
+                                                <mask key="constraints">
+                                                    <exclude reference="GPz-AV-7tU"/>
                                                 </mask>
                                             </variation>
                                         </stackView>
@@ -212,14 +210,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSr-me-LUI" userLabel="YAsixSeperator">
-                    <rect key="frame" x="67" y="791" width="337" height="0.5"/>
+                    <rect key="frame" x="46" y="791" width="358" height="0.5"/>
                     <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="wyu-YE-keM"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XG-4X-7Qe" userLabel="XAxis Container View">
-                    <rect key="frame" x="67" y="801" width="337" height="41"/>
+                    <rect key="frame" x="46" y="801" width="358" height="41"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2vV-uT-x7R">
                             <rect key="frame" x="31.5" y="3.5" width="34" height="37.5"/>
@@ -282,15 +280,6 @@
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score(%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QN-zS-puq">
-                    <rect key="frame" x="-12" y="44" width="50.5" height="757"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="Ihy-Pz-vAY"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
-                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="qGN-43-zvP"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -298,14 +287,12 @@
                 <constraint firstItem="2XG-4X-7Qe" firstAttribute="leading" secondItem="RSr-me-LUI" secondAttribute="leading" id="1TK-qN-hhj"/>
                 <constraint firstItem="2XG-4X-7Qe" firstAttribute="trailing" secondItem="RSr-me-LUI" secondAttribute="trailing" id="4IT-ZT-4QE"/>
                 <constraint firstItem="awZ-ll-Nv9" firstAttribute="trailing" secondItem="jvi-Tn-7zN" secondAttribute="trailing" id="8tm-dY-tII"/>
-                <constraint firstItem="4QN-zS-puq" firstAttribute="top" secondItem="0u4-I7-qSj" secondAttribute="top" id="93H-RX-6AW"/>
                 <constraint firstItem="2XG-4X-7Qe" firstAttribute="top" secondItem="0u4-I7-qSj" secondAttribute="bottom" id="BYU-3p-wov"/>
                 <constraint firstItem="qGN-43-zvP" firstAttribute="bottom" secondItem="2XG-4X-7Qe" secondAttribute="bottom" constant="20" id="CGf-Ei-pJO"/>
                 <constraint firstItem="RSr-me-LUI" firstAttribute="top" secondItem="0u4-I7-qSj" secondAttribute="bottom" constant="-10" id="EdC-eq-lKH"/>
-                <constraint firstItem="0u4-I7-qSj" firstAttribute="leading" secondItem="qGN-43-zvP" secondAttribute="leading" constant="31" id="FVJ-wQ-TEC"/>
+                <constraint firstItem="0u4-I7-qSj" firstAttribute="leading" secondItem="qGN-43-zvP" secondAttribute="leading" constant="10" id="FVJ-wQ-TEC"/>
                 <constraint firstItem="W1X-WV-3K8" firstAttribute="height" secondItem="Dpp-ou-mmC" secondAttribute="height" id="HHZ-hK-Q4V"/>
                 <constraint firstItem="jvi-Tn-7zN" firstAttribute="trailing" secondItem="uq5-jI-LMP" secondAttribute="trailing" id="K1e-dJ-jCL"/>
-                <constraint firstItem="4QN-zS-puq" firstAttribute="bottom" secondItem="0u4-I7-qSj" secondAttribute="bottom" id="KCr-Cg-3Oe"/>
                 <constraint firstItem="uq5-jI-LMP" firstAttribute="leading" secondItem="W1X-WV-3K8" secondAttribute="leading" id="MCT-Ev-71U"/>
                 <constraint firstItem="Dpp-ou-mmC" firstAttribute="leading" secondItem="hbB-hF-aaM" secondAttribute="trailing" id="MEZ-EQ-NwL"/>
                 <constraint firstItem="awZ-ll-Nv9" firstAttribute="leading" secondItem="jvi-Tn-7zN" secondAttribute="leading" id="Mp6-Jh-Voa"/>
@@ -324,7 +311,6 @@
                 <constraint firstItem="Dpp-ou-mmC" firstAttribute="centerY" secondItem="FfC-UD-U6v" secondAttribute="centerY" id="r2S-ZM-TUJ"/>
                 <constraint firstItem="RSr-me-LUI" firstAttribute="trailing" secondItem="0u4-I7-qSj" secondAttribute="trailing" id="rf5-u8-aYy"/>
                 <constraint firstItem="W1X-WV-3K8" firstAttribute="centerY" secondItem="2tp-dG-rAO" secondAttribute="centerY" id="x1U-XI-jG1"/>
-                <constraint firstItem="4QN-zS-puq" firstAttribute="leading" secondItem="qGN-43-zvP" secondAttribute="leading" constant="-12" id="y4w-zO-4fI"/>
                 <constraint firstItem="jvi-Tn-7zN" firstAttribute="centerY" secondItem="uTX-V3-fsQ" secondAttribute="centerY" id="ydT-7v-aHH"/>
                 <constraint firstItem="jvi-Tn-7zN" firstAttribute="leading" secondItem="uq5-jI-LMP" secondAttribute="leading" id="ywC-pT-Vh7"/>
             </constraints>

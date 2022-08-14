@@ -9,9 +9,13 @@ import UIKit
 @IBDesignable
 class BarRenderer: UIView {
 
+    //outlets
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var lblBarValue: UILabel!
+    @IBOutlet weak var lblLowerBarValue: UILabel!
+    
+    var maxValue : CGFloat = 100
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,19 +51,37 @@ class BarRenderer: UIView {
    @IBInspectable
    var value : CGFloat = 0.0 {
         didSet {
-            let difference : CGFloat = value / 1000
-            barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: (value / 100.0) ).isActive = true
             lblBarValue.text = "\(value)"
+            lblLowerBarValue.text = lblBarValue.text
+            
+            if value <= 15 {
+                lblLowerBarValue.isHidden = false
+                lblBarValue.isHidden = true
+            }
+            
+            if value > maxValue {
+                barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1 ).isActive = true
+            } else if value <= 0 {
+                barView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+                lblLowerBarValue.isHidden = false
+                lblBarValue.isHidden = true
+            } else {
+                barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: (value / 100.0) ).isActive = true
+            }
+           
+            
             barView.layer.cornerRadius = 10
             barView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         }
     }
     
-    func setupBarWithAnimation(value:CGFloat, duration:Double = 0.4,delay:Double = 0.0,dampingEffect : Double = 0.4,dampingVelocity:Double=0.2,color:UIColor, labelColor: UIColor) {
+    func setupBarWithAnimation(value:CGFloat, duration:Double = 0.1,delay:Double = 0.0,dampingEffect : Double = 0.5,dampingVelocity:Double=1.0,color:UIColor, labelColor: UIColor) {
         setupBar(value, color: color, labelColor: labelColor)
         UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: dampingEffect, initialSpringVelocity: dampingVelocity, options: .curveLinear, animations: {
-            self.layoutIfNeeded()
+            self.barView.layoutIfNeeded()
         }, completion: nil)
+       
+        
     }
     
    private var color : UIColor = .clear {
