@@ -15,7 +15,7 @@ class BarRenderer: UIView {
     @IBOutlet weak var lblBarValue: UILabel!
     @IBOutlet weak var lblLowerBarValue: UILabel!
     
-    var maxValue : CGFloat = 100
+    var maxScore : CGFloat = 100
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +34,9 @@ class BarRenderer: UIView {
         contentView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
     }
     
-    func setupBar(_ value: CGFloat, color:UIColor, labelColor: UIColor) {
-        self.value = value
+    //MARK: setup bar
+    func setupBar(_ value: String, color:UIColor, labelColor: UIColor) {
+        self.value = NSString(string: value)
         self.color = color
         self.labelColor = labelColor
     }
@@ -49,39 +50,60 @@ class BarRenderer: UIView {
     }
     
    @IBInspectable
-   var value : CGFloat = 0.0 {
+    var value : NSString = "0.0" {
         didSet {
-            lblBarValue.text = "\(value)"
+            var tempVal : CGFloat = 0
+            lblBarValue.text = value as String
             lblLowerBarValue.text = lblBarValue.text
+
+            if value.contains(":") {
+                let seperatedValue = value.components(separatedBy: ":")
+                let hrs = (seperatedValue[0])
+                let mins = (seperatedValue[1])
+                let secs = (seperatedValue[2])
+                
+                if hrs == "0" || hrs == "00" {
+                    lblBarValue.text = mins + "m " + secs + "s"
+                    lblLowerBarValue.text = lblBarValue.text
+                    let time = CGFloat((Float(String(mins + "." + secs)) ?? 0))
+                    tempVal = time
+                } else {
+                    lblBarValue.text = hrs + "h " + mins + "m"
+                    lblLowerBarValue.text = lblBarValue.text
+                    let time = CGFloat((Float(String(hrs)) ?? 0) * 60) + CGFloat(Float(String(mins)) ?? 0)
+                    tempVal = time
+                }
+            } else {
+                tempVal = CGFloat(value.floatValue)
+            }
             
-            if value <= 15 {
+            if tempVal <= 15.0 {
                 lblLowerBarValue.isHidden = false
                 lblBarValue.isHidden = true
             }
             
-            if value > maxValue {
+            if  tempVal > maxScore {
                 barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1 ).isActive = true
-            } else if value <= 0 {
+            } else if  tempVal <= 0 {
                 barView.heightAnchor.constraint(equalToConstant: 1).isActive = true
                 lblLowerBarValue.isHidden = false
                 lblBarValue.isHidden = true
             } else {
-                barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: (value / 100.0) ).isActive = true
+                barView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: (tempVal / maxScore) ).isActive = true
             }
-           
+            
             
             barView.layer.cornerRadius = 10
             barView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         }
     }
     
-    func setupBarWithAnimation(value:CGFloat, duration:Double = 0.1,delay:Double = 0.0,dampingEffect : Double = 0.5,dampingVelocity:Double=1.0,color:UIColor, labelColor: UIColor) {
+    //MARK: sets bar value with animation
+    func setupBarWithAnimation(value:String, duration:Double = 0.4,delay:Double = 0.0,dampingEffect : Double = 0.4,dampingVelocity:Double=0.2,color:UIColor, labelColor: UIColor) {
         setupBar(value, color: color, labelColor: labelColor)
         UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: dampingEffect, initialSpringVelocity: dampingVelocity, options: .curveLinear, animations: {
-            self.barView.layoutIfNeeded()
+            self.layoutIfNeeded()
         }, completion: nil)
-       
-        
     }
     
    private var color : UIColor = .clear {

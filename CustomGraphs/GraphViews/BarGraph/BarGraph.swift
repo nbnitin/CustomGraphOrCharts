@@ -76,7 +76,7 @@ class BarGraph: UIView {
     }
     
    @IBInspectable
-    var values : [CGFloat] = [CGFloat]() {
+    var values : [String] = [String]()  {
         didSet {
             barRendererViews.removeAll()
             let _ = stackChartView.arrangedSubviews.map({
@@ -89,7 +89,7 @@ class BarGraph: UIView {
             
             for valueIndex in 0 ..< values.count {
                 let barRendererView = BarRenderer()
-                barRendererView.maxValue = self.maxScore
+                barRendererView.maxScore = self.maxScore
                 barRendererView.widthAnchor.constraint(equalToConstant: BAR_WIDTH).isActive = true
                 barRendererView.backgroundColor = .clear
                 stackChartView.addArrangedSubview(barRendererView)
